@@ -1,4 +1,4 @@
-package com.yipkei.client;
+package com.yipkei.skythm.client;
 
 import net.fabricmc.api.ClientModInitializer;
 

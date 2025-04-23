@@ -15,7 +15,9 @@
   "entrypoints": {
     "fabric-datagen": ["com.yipkei.client.SkythmDataGenerator"],
     "client": ["com.yipkei.client.SkythmClient"],
-    "main": ["com.yipkei.Skythm"]
+    "main": [
+      "com.yipkei.skythm.Skythm"
+    ]
   },
 
   "mixins": [

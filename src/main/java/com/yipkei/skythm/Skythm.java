@@ -1,4 +1,4 @@
-package com.yipkei;
+package com.yipkei.skythm;
 
 import net.fabricmc.api.ModInitializer;
 
