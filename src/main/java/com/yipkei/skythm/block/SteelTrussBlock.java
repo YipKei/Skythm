@@ -2,6 +2,7 @@ package com.yipkei.skythm.block;
 
 import com.mojang.serialization.MapCodec;
 import com.yipkei.skythm.init.ModBlocks;
+import com.yipkei.skythm.init.ModTags;
 import net.minecraft.block.*;
 import net.minecraft.entity.FallingBlockEntity;
 import net.minecraft.fluid.FluidState;
@@ -161,17 +162,20 @@ public class SteelTrussBlock extends Block implements Waterloggable {
         BlockPos.Mutable mutable = pos.mutableCopy().move(Direction.DOWN);
         BlockState blockState = world.getBlockState(mutable);
         int i = MAX_DISTANCE;
-        if (blockState.isOf(ModBlocks.STEEL_TRUSS)) {
+        if (blockState.isOf(ModBlocks.STEEL_TRUSS)) {                                   //如果下方是桁架，继承距离
             i = (Integer)blockState.get(DISTANCE);
-        } else if (blockState.isSideSolidFullSquare(world, mutable, Direction.UP)) {
+        } else if (blockState.isSideSolidFullSquare(world, mutable, Direction.UP)) {    //如果下表面完整，距离设置为0
             return 0;
         }
 
-        for (Direction direction : Direction.Type.HORIZONTAL) {
-            BlockState blockState2 = world.getBlockState(mutable.set(pos, direction));
-            if (blockState2.isOf(ModBlocks.STEEL_TRUSS)) {
-                i = Math.min(i, (Integer)blockState2.get(DISTANCE) + 1);
-                if (i == 1) {
+        for (Direction direction : Direction.Type.HORIZONTAL) {                         //遍历水平连接方块
+            BlockState blockState2 = world.getBlockState(mutable.set(pos, direction));  //记录水平连接的方块状态
+            if (blockState2.isIn(ModTags.Blocks.FERROCONCRETE)) {                       //如果直接连接到钢筋混凝土上，则返回1
+                return 1;
+            }
+            if (blockState2.isOf(ModBlocks.STEEL_TRUSS)) {                              //如果水平方向是桁架
+                i = Math.min(i, (Integer)blockState2.get(DISTANCE) + 1);                //距离为水平方向桁架距离+1和15的最小值
+                if (i == 1) {                                                           //如果已经是最小值1就不用算了
                     break;
                 }
             }
