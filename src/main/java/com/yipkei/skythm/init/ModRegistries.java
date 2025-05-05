@@ -3,7 +3,7 @@ package com.yipkei.skythm.init;
 import com.google.common.collect.Maps;
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.Lifecycle;
-import com.yipkei.skythm.consume.ModConsumeEffect;
+//import com.yipkei.skythm.consume.ModConsumeEffect;
 import net.minecraft.Bootstrap;
 import net.minecraft.registry.*;
 import net.minecraft.registry.entry.RegistryEntryInfo;
@@ -21,7 +21,7 @@ public class ModRegistries {
     private static final MutableRegistry<MutableRegistry<?>> ROOT = new SimpleRegistry<>(RegistryKey.ofRegistry(RegistryKeys.ROOT), Lifecycle.stable());
     public static final Registry<? extends Registry<?>> REGISTRIES = ROOT;
 
-    public static final Registry<ModConsumeEffect.Type<?>> MOD_CONSUME_EFFECT_TYPE = create(RegistryKeys.CONSUME_EFFECT_TYPE, registry -> ModConsumeEffect.Type.APPLY_EFECTS);
+    //public static final Registry<ModConsumeEffect.Type<?>> MOD_CONSUME_EFFECT_TYPE = create(RegistryKeys.CONSUME_EFFECT_TYPE, registry -> ModConsumeEffect.Type.APPLY_EFECTS);
 
     private static <T> Registry<T> create(RegistryKey<? extends Registry<T>> key, ModRegistries.Initializer<T> initializer) {
         return create(key, new SimpleRegistry<>(key, Lifecycle.stable(), false), initializer);

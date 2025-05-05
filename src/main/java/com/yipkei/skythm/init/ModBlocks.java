@@ -1,6 +1,7 @@
 package com.yipkei.skythm.init;
 
 import com.yipkei.skythm.Skythm;
+import com.yipkei.skythm.block.NoriFieldBlock;
 import com.yipkei.skythm.block.SteelTrussBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -39,6 +40,9 @@ public class ModBlocks {
     public static final Block RAMMED_EARTH = register("rammed_earth", AbstractBlock.Settings.create().mapColor(MapColor.DIRT_BROWN).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(3.0f, 4.0f).pistonBehavior(PistonBehavior.DESTROY));
 
     public static final Block TUNGSTEN_STEEL_BLOCK = register("tungsten_steel_block", AbstractBlock.Settings.create().mapColor(DyeColor.BROWN).sounds(BlockSoundGroup.NETHERITE).requiresTool().strength(8.0f, 16.0f));
+
+    // 紫菜田
+    public static final Block NORI_FILED = register("nori_filed", NoriFieldBlock::new, AbstractBlock.Settings.copy(Blocks.CHAIN));
 
     private static RegistryKey<Block> keyOf(String id) {
         return RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Skythm.MOD_ID, id));

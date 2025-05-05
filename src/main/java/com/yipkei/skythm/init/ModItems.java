@@ -39,7 +39,7 @@ public class ModItems {
     public static final Item MONSTER_WHITE = registerItems("monster_white", new Item(new Item.Settings().maxCount(6).food(ModFoodComponents.MONSTER, ModConsumableComponents.MONSTER_WHITE)));
     public static final Item MONSTER_PINK = registerItems("monster_pink", new Item(new Item.Settings().maxCount(6).food(ModFoodComponents.MONSTER, ModConsumableComponents.MONSTER_PINK)));
 
-    // 食物原料
+    // 食物半成品
     public static final Item CAKE_BASE = registerItems("cake_base", new Item(new Item.Settings().maxCount(1)));
     public static final Item RAW_COOKIE = register("raw_cake");
     public static final Item RAW_BREAD = register("raw_bread");
@@ -48,6 +48,9 @@ public class ModItems {
     public static final Item RAW_RABBIT_STEW = registerItems("raw_rabbit_stew", new Item(new Item.Settings().maxCount(1)));
     public static final Item RAW_MUSHROOM_STEW = registerItems("raw_mushroom_stew", new Item(new Item.Settings().maxCount(1)));
     public static final Item RAW_BEETROOT_STEW = registerItems("raw_beetroot_stew", new Item(new Item.Settings().maxCount(1)));
+
+    // 作物
+    public static final Item NORI = registerItems("nori", new Item(new Item.Settings()));
 
     // 工具类
 
