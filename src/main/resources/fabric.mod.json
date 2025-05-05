@@ -13,8 +13,8 @@
 
   "environment": "*",
   "entrypoints": {
-    "fabric-datagen": ["com.yipkei.client.SkythmDataGenerator"],
-    "client": ["com.yipkei.client.SkythmClient"],
+    "fabric-datagen": ["com.yipkei.skythm.client.SkythmDataGenerator"],
+    "client": ["com.yipkei.skythm.client.SkythmClient"],
     "main": [
       "com.yipkei.skythm.Skythm"
     ]
